@@ -92,7 +92,7 @@ void setup() {
   USB.begin();
   while (!Serial && millis() < 5000)
     delay(10);
-  // Read recieved MIDI packets then write them out
+  // Read received MIDI packets then write them out
   ESP_LOGI(TAG, "MIDI echo task");
   xTaskCreate(midi_echo, "midi_echo", 2 * 1024, NULL, 5, NULL);
 }
